@@ -1,5 +1,5 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import propTypes from 'prop-types'
 
 function Card({children, reverse}) {
   return (
@@ -13,9 +13,9 @@ Card.defaultProps= {
     reverse: false,
 }
 
-Card.PropTypes = {
-    reverse: PropTypes.bool,
-    children : PropTypes.node.isRequired,
+Card.propTypes = {
+    reverse: propTypes.bool,
+    children : propTypes.node.isRequired,
 }
 
 export default Card
