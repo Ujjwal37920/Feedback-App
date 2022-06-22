@@ -3,8 +3,10 @@ import React from 'react'
 function FeedbackStats({feedback}) {
 
     let average = feedback.reduce((accumulator, item)=>{
-        return accumulator + item.rating
+      
+        return Number(accumulator) + Number(item.rating)
     },0)/feedback.length
+
   return (
     <div className='feedback-stats'>
         <h4> {feedback.length}: Reviews</h4>

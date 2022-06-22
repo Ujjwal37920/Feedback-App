@@ -11,7 +11,6 @@ function FeedbackForm({handleAdd}) {
     const [rating, setRating] = useState(10)
 
     const handleTextChange = (e)=>{
-        setText(e.target.value)
         if(text == ''){
             setMessage(null)
             setIsDisable(true)
@@ -24,6 +23,8 @@ function FeedbackForm({handleAdd}) {
             setMessage('')
             setIsDisable(false)
         }
+        setText(e.currentTarget.value)
+
         
     }
 
@@ -43,7 +44,7 @@ function FeedbackForm({handleAdd}) {
     <Card>
         <form onSubmit = {handleSubmit}>
             <h2>How would you rate our service</h2>
-            <RatingSelect select = {(rating)=> setRating(rating)}/>
+            <RatingSelect select = {(newRating)=> setRating(newRating)}/>
 
             <div className="input-group">
                 <input type='text' onChange={handleTextChange} placeholder='write a review' value={text}></input>

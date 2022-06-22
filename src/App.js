@@ -6,7 +6,7 @@ import FeedbackData from "./Data/FeedbackData"
 import FeedbackStats from "./components/FeedbackStats"
 import FeedbackForm from "./components/FeedbackForm"
 import { useState } from "react"
-import { v4 as uuidv4} from "uuid/dist/v4"  
+import { v4 as uuidv4} from "uuid"  
 
 function App(){
 
@@ -18,8 +18,11 @@ function App(){
         }
     }
 
-    const addFeedback=(feedback)=>{
-        console.log(feedback)
+    const addFeedback=(newFeedback)=>{
+        newFeedback.id = uuidv4()
+        console.log(newFeedback)
+        setFeedback([newFeedback,...feedback])
+
     }
 
     return (
