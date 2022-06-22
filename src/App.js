@@ -6,8 +6,7 @@ import FeedbackData from "./Data/FeedbackData"
 import FeedbackStats from "./components/FeedbackStats"
 import FeedbackForm from "./components/FeedbackForm"
 import { useState } from "react"
-import RatingSelect from "./RatingSelect"
-
+import { v4 as uuidv4} from "uuid/dist/v4"  
 
 function App(){
 
@@ -19,11 +18,15 @@ function App(){
         }
     }
 
+    const addFeedback=(feedback)=>{
+        console.log(feedback)
+    }
+
     return (
         <>
-        <RatingSelect/>
-        <FeedbackForm/>
+        
         <Header text = "Feedback Application"/>
+        <FeedbackForm handleAdd={addFeedback}/>
         <FeedbackStats feedback={feedback}/>
         <div className="container">
         <FeedbackList feedback = {feedback} handleClick={deleteFeedback}/>
