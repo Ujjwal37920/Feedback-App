@@ -5,7 +5,7 @@ import FeedbackContext from '../context/FeedbackContext'
 import {motion, AnimatePresence} from 'framer-motion'
 
 
-function FeedbackList({ handleClick}) {
+function FeedbackList() {
 
     const {feedback} = useContext(FeedbackContext)
 
@@ -24,7 +24,7 @@ function FeedbackList({ handleClick}) {
              animate={{opacity:1}}
              exit={{opacity:0}}
              >
-            <FeedbackItem item={item} handleDelete = {handleClick}/>
+            <FeedbackItem item={item}/>
             </motion.div>
         ))}
         

@@ -14,21 +14,7 @@ import { v4 as uuidv4} from "uuid"
 
 function App(){
 
-    const [feedback, setFeedback] = useState(FeedbackData)
-
-    const deleteFeedback = (id)=>{
-        if(window.confirm("are you sure you want to delete?")){
-            setFeedback(feedback.filter((item)=> item.id !== id))
-        }
-    }
-
-    const addFeedback=(newFeedback)=>{
-        newFeedback.id = uuidv4()
-        console.log(newFeedback)
-        setFeedback([newFeedback,...feedback])
-
-    }
-
+    
     return (
        <FeedbackProvider>
         <Router>  
@@ -37,9 +23,9 @@ function App(){
             <div className="container">
                 <Routes>
                     <Route exact path='/' element={<>
-                <FeedbackForm handleAdd={addFeedback}/>
-                <FeedbackStats feedback={feedback}/>
-                <FeedbackList feedback = {feedback} handleClick={deleteFeedback}/>
+                <FeedbackForm />
+                <FeedbackStats />
+                <FeedbackList />
                 </>} ></Route>
                 </Routes>
                 <Routes>
