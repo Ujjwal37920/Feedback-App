@@ -6,6 +6,7 @@ import FeedbackData from "./Data/FeedbackData"
 import FeedbackStats from "./components/FeedbackStats"
 import FeedbackForm from "./components/FeedbackForm"
 import About from "./pages/About"
+import {FeedbackProvider} from "./context/FeedbackContext"
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import AboutIconLink from "./shared/AboutIconLink"
 import { useState } from "react"
@@ -29,7 +30,7 @@ function App(){
     }
 
     return (
-       
+       <FeedbackProvider>
         <Router>  
             <Header text = "Feedback Application"/>
         
@@ -44,9 +45,10 @@ function App(){
                 <Routes>
                 <Route exact path="/about"element={<About/>}/>
                 </Routes>
-                <AboutIconLink/> 
+                <AboutIconLink /> 
             </div>
         </Router>
+        </FeedbackProvider>
         
     )
 }

@@ -1,9 +1,14 @@
 import React from 'react'
 import FeedbackItem from './FeedbackItem'
-import propType from 'prop-types'
+ import {useContext} from 'react'
+import FeedbackContext from '../context/FeedbackContext'
 import {motion, AnimatePresence} from 'framer-motion'
 
-function FeedbackList({feedback, handleClick}) {
+
+function FeedbackList({ handleClick}) {
+
+    const {feedback} = useContext(FeedbackContext)
+
     if(!feedback || feedback.length ==0){
         return <p>No feedback as for now</p>
     }
@@ -28,8 +33,6 @@ function FeedbackList({feedback, handleClick}) {
   )
 }
 
-FeedbackList.propType = {
-    feedback: propType.array,
-}
+
 
 export default FeedbackList

@@ -1,0 +1,4 @@
+fileignoreconfig:
+- filename: src/components/FeedbackList.jsx
+  checksum: 013ab092601e8970de4348d9bd6b6737eb6391112a630daa2db3356a3edb43e7
+version: ""
